@@ -5,9 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.JokeTeller;
+
+import app.amrelmasry.joke_display.JokeDisplayManager;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
 
     public void tellJoke(View view) {
         String joke = JokeTeller.getInstance().tellJoke();
-        Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
+//        Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
+        JokeDisplayManager.displayJoke(this, joke);
     }
 
 
