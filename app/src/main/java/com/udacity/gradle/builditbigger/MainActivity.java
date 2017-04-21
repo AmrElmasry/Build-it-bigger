@@ -6,9 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-import com.example.JokeTeller;
-
-import app.amrelmasry.joke_display.JokeDisplayManager;
+import com.udacity.gradle.builditbigger.network.JokeAsyncTask;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -43,9 +41,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void tellJoke(View view) {
-        String joke = JokeTeller.getInstance().tellJoke();
-//        Toast.makeText(this, joke, Toast.LENGTH_LONG).show();
-        JokeDisplayManager.displayJoke(this, joke);
+        JokeAsyncTask jokeAsyncTask = new JokeAsyncTask(this);
+        jokeAsyncTask.execute();
     }
 
 
